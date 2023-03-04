@@ -101,7 +101,8 @@ func (c *Client) ListSchedulesWithContext(ctx context.Context, o ListSchedulesOp
 		return nil, err
 	}
 
-	resp, err := c.get(ctx, "/schedules?"+v.Encode())
+	// resp, err := c.get(ctx, "/schedules?"+v.Encode())
+	resp, err := c.get(ctx, "/schedules?"+o.Query)
 	if err != nil {
 		return nil, err
 	}
